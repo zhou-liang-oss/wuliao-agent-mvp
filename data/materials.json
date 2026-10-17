@@ -1,0 +1,7 @@
+[
+  {"code": "M001", "name": "单晶硅片 210mm", "category": "硅片", "attributes": {"尺寸": "210mm", "纯度": "99.99%"}},
+  {"code": "M002", "name": "多晶硅片 182mm", "category": "硅片", "attributes": {"尺寸": "182mm", "纯度": "99.9%"}},
+  {"code": "M003", "name": "单晶硅棒", "category": "晶体", "attributes": {"直径": "210mm", "类型": "N型"}},
+  {"code": "M004", "name": "光伏玻璃 3.2mm", "category": "玻璃", "attributes": {"厚度": "3.2mm", "透光率": "94%"}},
+  {"code": "M005", "name": "EVA胶膜", "category": "封装材料", "attributes": {"厚度": "0.5mm", "类型": "透明"}}
+]
