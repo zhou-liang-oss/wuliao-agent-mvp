@@ -86,10 +86,21 @@ def run_agent(user_query):
 2. 再推荐分类（recommend_category）
 3. 根据分类和公司标准，生成申请单草稿
 4. 最后用JSON输出申请单
-5. 如果缺少必填信息，主动向用户提问索要"""
+5.  请仔细阅读历史对话。如果用户已经提供了某些信息，绝不重复询问。只询问缺失的必填项。"""
         },
         {"role": "user", "content": user_query}
     ]
+        
+    # 2. 把之前的聊天记录加进来（保留最近 6 轮对话，防止 token 超限）
+    history = st.session_state.messages[-6:] if len(st.session_state.messages) > 6 else st.session_state.messages
+    
+    for msg in history:
+        # 过滤掉系统提示和可能存在的复杂对象，只保留纯文本对话
+        if msg["role"] in ["user", "assistant"] and isinstance(msg["content"], str):
+            messages.append({"role": msg["role"], "content": msg["content"]})
+            
+    # 3. 把最新的一句加进去
+    messages.append({"role": "user", "content": user_query})
 
     steps = []  # 记录过程，用于前端展示
     max_rounds = 5
