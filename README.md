@@ -20,4 +20,4 @@
 4. 启动前端：`streamlit run app.py`
 
 ## 📸 产品截图
-<img width="2130" height="13106" alt="Xnip2026-10-18_07-01-12" src="https://github.com/user-attachments/assets/967858cf-6ac2-427e-a6e3-4eadc9a716ea" />
+![产品截图](images/demo.jpg)
